@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: ng-zorro-spa
-          image: inimeve/ng-zorro-spa:0.0.1_alpha5
+          image: inimeve/ng-zorro-spa:local
           imagePullPolicy: Never
           ports:
             - containerPort: 80
