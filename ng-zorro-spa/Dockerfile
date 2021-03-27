@@ -7,7 +7,12 @@ WORKDIR /app
 COPY package.json /app
 RUN npm install
 # Build app
-COPY . /app
+# COPY . /app
+COPY /src /app/src
+COPY angular.json /app
+COPY package.json /app
+COPY tsconfig.json /app
+COPY tsconfig.app.json /app
 RUN npm run build
 
 ### Create image ###

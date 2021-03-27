@@ -6,7 +6,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /ng-zorro-spa
+      - path: /ng-zorro-spa/
+        pathType: Prefix
         backend:
           serviceName: ng-zorro-spa-service
           servicePort: 80
@@ -29,7 +30,7 @@ kind: Deployment
 metadata:
   name: ng-zorro-spa-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       component: ng-zorro-spa
@@ -40,7 +41,7 @@ spec:
     spec:
       containers:
         - name: ng-zorro-spa
-          image: inimeve/ng-zorro-spa:0.0.1_alpha1
+          image: inimeve/ng-zorro-spa:0.0.1_alpha5
           imagePullPolicy: Never
           ports:
             - containerPort: 80
