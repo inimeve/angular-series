@@ -3,11 +3,17 @@
 ## Build image
 
 ```bash
-docker build -t inimeve/ng-zorro-spa:0.0.1_alpha1 .
+docker build -t {image-name} .
 ```
 
 ## Run image
 
 ```bash
-docker run --name ng-zorro-spa -p 8080:80 inimeve/ng-zorro-spa:0.0.1_alpha1
+docker run --name ng-zorro-spa -p 8080:80 --rm {image-name}
+```
+
+## Load image to KinD
+
+```bash
+kind load docker-image {image-name}
 ```
