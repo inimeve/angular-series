@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PetRepository } from './core/pet/pet.repository';
+import { PetMockRepository } from './data/pet/pet-mock-api/pet-mock.repository';
 import { SharedModule } from './ui/shared/shared.module';
 
 
@@ -26,7 +28,10 @@ registerLocaleData(es);
 
     SharedModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [
+    { provide: NZ_I18N, useValue: es_ES },
+    { provide: PetRepository, useClass: PetMockRepository }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
