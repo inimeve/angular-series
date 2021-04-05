@@ -15,7 +15,7 @@ export class PetMockMapper {
             id: 0,
             name: petModel.name,
             birthday: petModel.birthday.getTime()
-        }
+        };
     }
 
 }

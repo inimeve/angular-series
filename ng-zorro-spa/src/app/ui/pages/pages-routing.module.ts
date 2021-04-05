@@ -11,7 +11,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome', loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule) },
       { path: 'goodbye', loadChildren: () => import('./goodbye/goodbye.module').then(m => m.GoodbyeModule) },
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'vets', loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule) },
+      { path: 'pets', loadChildren: () => import('./pets/pets.module').then(m => m.PetsModule) },
     ]
   },
   { path: '', pathMatch: 'full', redirectTo: 'welcome' },
