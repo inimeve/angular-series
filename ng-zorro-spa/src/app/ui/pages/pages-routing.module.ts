@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutBasicComponent } from '../layout/basic/basic.component';
+import { BasicLayoutComponent } from '../layout/basic-layout/basic-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutBasicComponent,
+    component: BasicLayoutComponent,
     children: [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome', loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule) },
