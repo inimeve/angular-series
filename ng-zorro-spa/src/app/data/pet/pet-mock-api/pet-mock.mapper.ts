@@ -5,16 +5,19 @@ export class PetMockMapper {
 
     mapFrom(petMockEntity: PetMockEntity): PetModel {
         return {
+            id: petMockEntity.id,
             name: petMockEntity.name,
-            birthday: new Date(petMockEntity.birthday)
+            birthday: new Date(petMockEntity.birthday),
+            vetId: petMockEntity.vetId
         };
     }
 
     mapTo(petModel: PetModel): PetMockEntity {
         return {
-            id: 0,
+            id: petModel.id,
             name: petModel.name,
-            birthday: petModel.birthday.getTime()
+            birthday: petModel.birthday.getTime(),
+            vetId: petModel.vetId
         };
     }
 

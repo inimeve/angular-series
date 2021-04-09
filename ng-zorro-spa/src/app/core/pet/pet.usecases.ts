@@ -15,6 +15,10 @@ export class PetUseCases {
         return this.petRepository.getAllPets();
     }
 
+    getPetsByVet(vetId: number): Observable<PetModel[]> {
+        return this.petRepository.getPetsByVet(vetId);
+    }
+
     getPetById(id: number): Observable<PetModel> {
         return this.petRepository.getPetById(id);
     }

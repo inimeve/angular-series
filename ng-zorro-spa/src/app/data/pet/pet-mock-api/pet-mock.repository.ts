@@ -18,17 +18,20 @@ export class PetMockRepository extends PetRepository {
         {
             id: 1,
             name: 'Mr. MockBig',
-            birthday: new Date().getTime()
+            birthday: new Date().getTime(),
+            vetId: 1
         },
         {
             id: 2,
             name: 'Mrs. MockTootoot',
-            birthday: new Date().getTime()
+            birthday: new Date().getTime(),
+            vetId: 1
         },
         {
             id: 3,
             name: 'LittleMockToot',
-            birthday: new Date().getTime()
+            birthday: new Date().getTime(),
+            vetId: 2
         }
     ];
 
@@ -40,6 +43,15 @@ export class PetMockRepository extends PetRepository {
         return from(this.pets)
             .pipe(filter((pets: PetMockEntity) => pets.id === id))
             .pipe(map(this.mapper.mapFrom));
+    }
+
+    getPetsByVet(vetId: number): Observable<PetModel[]> {
+        return from(this.pets)
+            .pipe(
+                filter(pet => pet.vetId === vetId),
+                map(this.mapper.mapFrom),
+                toArray()
+            );
     }
 
     getAllPets(): Observable<PetModel[]> {

@@ -5,6 +5,8 @@ export abstract class PetRepository {
 
     abstract getPetById(id: number): Observable<PetModel>;
 
+    abstract getPetsByVet(vetId: number): Observable<PetModel[]>;
+
     abstract getAllPets(): Observable<PetModel[]>;
 
 }
