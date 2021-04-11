@@ -1,1 +1,36 @@
-<p>sidebar works!</p>
+<nz-sider
+  class="menu-sidebar"
+  nzCollapsible
+  nzWidth="256px"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null"
+>
+  <div class="sidebar-logo">
+    <a>
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+      <h1>Ant Design Of Angular</h1>
+    </a>
+  </div>
+  <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="false">
+    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/pages/welcome">Welcome</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/pages/pets">Pets</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/pages/vets">Vets</a>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a>Basic Form</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nz-sider>

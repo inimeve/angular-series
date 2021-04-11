@@ -6,7 +6,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 
 const COMPONENTS: Type<any>[] = [
-  BasicLayoutComponent
+  BasicLayoutComponent,
+  HeaderComponent,
+  SidebarComponent,
+  FooterComponent
 ];
 
 @NgModule({
@@ -14,6 +17,6 @@ const COMPONENTS: Type<any>[] = [
     SharedModule
   ],
   exports: [...COMPONENTS],
-  declarations: [...COMPONENTS, HeaderComponent, SidebarComponent, FooterComponent]
+  declarations: [...COMPONENTS]
 })
 export class LayoutModule { }

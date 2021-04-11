@@ -1,1 +1,11 @@
-<p>header works!</p>
+<nz-header>
+  <div class="app-header">
+    <span class="header-trigger" (click)="toggleSidebar()">
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="sidebarState.isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      ></i>
+    </span>
+  </div>
+</nz-header>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService, SidebarState } from '../sidebar/sidebar.service';
 
 @Component({
   selector: 'app-basic-layout',
@@ -7,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicLayoutComponent implements OnInit {
 
-  isCollapsed = false;
+  sidebarState: SidebarState;
 
-  constructor() { }
+  constructor(private sidebarService: SidebarService) {
+    this.sidebarState = this.sidebarService.getState();
+
+    this.sidebarService.onStateChanged()
+      .subscribe((sidebarState: SidebarState) => {
+        this.sidebarState = sidebarState;
+      });
+  }
 
   ngOnInit(): void {
+  }
+
+  toggleSidebar(): void {
+    this.sidebarService.toggle();
   }
 
 }
