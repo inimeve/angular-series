@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PetModel } from 'src/app/core/pet/pet.model';
 import { PetUseCases } from 'src/app/core/pet/pet.usecases';
-import { VetUseCases } from 'src/app/core/vet/vet.usecases';
 
 @Component({
   selector: 'app-pets',
@@ -10,17 +9,16 @@ import { VetUseCases } from 'src/app/core/vet/vet.usecases';
 })
 export class PetsComponent implements OnInit {
 
-  vetPets: PetModel[] = [];
+  pets: PetModel[] = [];
 
-  constructor() { }
+  constructor(private petUseCases: PetUseCases) { }
 
   ngOnInit(): void {
-    // this.petUsesCases.getPetsByVet(1)
-    //   .subscribe({
-    //     next: (pets: PetModel[]) => {
-    //       this.vetPets = pets;
-    //     }
-    //   });
+    this.petUseCases.getAllPets().subscribe({
+      next: (value) => this.pets = value,
+      error: (error) => console.log(error),
+      complete: () => console.log('complete')
+    });
   }
 
 }

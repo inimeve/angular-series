@@ -1,5 +1,24 @@
-<p>pets works!</p>
-
-<div *ngFor="let pet of vetPets">
-    {{pet.id}}-{{pet.name}}-{{pet.vetId}}
-</div>
+<nz-card nzTitle="Pet Data">
+  <nz-table #basicTable [nzData]="pets">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>VetId</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.birthday | date }}</td>
+        <td>{{ data.vetId }}</td>
+        <td>
+          <a>Action 一 {{ data.name }}</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

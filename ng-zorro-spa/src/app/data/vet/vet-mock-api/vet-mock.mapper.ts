@@ -5,14 +5,21 @@ export class VetMockMapper {
 
     mapFrom(vetMockEntity: VetMockEntity): VetModel {
         return {
-            name: vetMockEntity.name
+            id: vetMockEntity.id,
+            name: vetMockEntity.name,
+            age: vetMockEntity.age,
+            address: vetMockEntity.address,
+            phone: vetMockEntity.phone
         };
     }
 
     mapTo(vetModel: VetModel): VetMockEntity {
         return {
-            id: 0,
-            name: vetModel.name
+            id: vetModel.id,
+            name: vetModel.name,
+            age: vetModel.age,
+            address: vetModel.address,
+            phone: vetModel.phone
         };
     }
 

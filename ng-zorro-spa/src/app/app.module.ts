@@ -9,7 +9,9 @@ import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PetRepository } from './core/pet/pet.repository';
+import { VetRepository } from './core/vet/vet.repository';
 import { PetMockRepository } from './data/pet/pet-mock-api/pet-mock.repository';
+import { VetMockRepository } from './data/vet/vet-mock-api/vet-mock.repository';
 import { SharedModule } from './ui/shared/shared.module';
 
 
@@ -30,7 +32,8 @@ registerLocaleData(es);
   ],
   providers: [
     { provide: NZ_I18N, useValue: es_ES },
-    { provide: PetRepository, useClass: PetMockRepository }
+    { provide: PetRepository, useClass: PetMockRepository },
+    { provide: VetRepository, useClass: VetMockRepository }
   ],
   bootstrap: [AppComponent]
 })
