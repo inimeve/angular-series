@@ -19,7 +19,7 @@ export class SidebarService {
   private sidebarState$;
 
   constructor() {
-    this.sidebarState$ = new BehaviorSubject<SidebarState>(SidebarState.STATE_COMPACTED);
+    this.sidebarState$ = new BehaviorSubject<SidebarState>(SidebarState.STATE_EXPANDED);
   }
 
   getState(): SidebarState {
@@ -33,10 +33,8 @@ export class SidebarService {
   toggle(): void {
     if (this.sidebarState$.getValue() === SidebarState.STATE_COMPACTED) {
       this.sidebarState$.next(SidebarState.STATE_EXPANDED);
-      console.log(`SidebarState: ${this.sidebarState$.getValue().state}`);
     } else {
       this.sidebarState$.next(SidebarState.STATE_COMPACTED);
-      console.log(`SidebarState: ${this.sidebarState$.getValue().state}`);
     }
   }
 
