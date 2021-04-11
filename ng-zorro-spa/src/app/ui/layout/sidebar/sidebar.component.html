@@ -12,11 +12,12 @@
     </a>
   </div>
   <ul class="sidebar-list" nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="false">
+    <li nz-menu-item nzMatchRouter>
+      <i nz-icon nzType="home" nzTheme="outline"></i>
+      <a routerLink="/pages/welcome">Welcome</a>
+    </li>
     <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
       <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/pages/welcome">Welcome</a>
-        </li>
         <li nz-menu-item nzMatchRouter>
           <a routerLink="/pages/pets">Pets</a>
         </li>
