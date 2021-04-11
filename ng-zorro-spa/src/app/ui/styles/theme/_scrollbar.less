@@ -1,0 +1,26 @@
+// Scrollbar customization for Chrome & Edge. Not compatible with Firefox
+@import "./_colors.less";
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0.5rem 1rem 0 rgba(44, 51, 73, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: @primary-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: fadeout(@primary-color, 10%);
+}
+
+@media only screen and (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+}
