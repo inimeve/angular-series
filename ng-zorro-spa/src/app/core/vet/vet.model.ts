@@ -1,7 +1,12 @@
 export interface VetModel {
-    id: number;
+    id?: number;
     name: string;
     age: number;
     address: string;
-    phone: string;
+    phone?: string;
+    skillLevel?: number;
+    experiencePoints?: number;
+    specialization?: string;
+    city?: string;
+    joinDate?: Date;
 }

@@ -1,4 +1,18 @@
-<nz-card nzTitle="Vet Data">
+<div class="cards-container">
+  <app-vet-card *ngFor="let vet of vets$ | async"
+    [name]="vet.name"
+    [age]="vet.age"
+    [address]="vet.address"
+    [phone]="vet.phone"
+    [skillLevel]="vet.skillLevel"
+    [experiencePoints]="vet.experiencePoints"
+    [specialization]="vet.specialization"
+    [city]="vet.city"
+    [joinDate]="vet.joinDate"
+  ></app-vet-card>
+</div>
+
+<nz-card nzTitle="Vet Data" *ngIf="(vets$ | async) as vets">
   <nz-table #basicTable [nzData]="vets">
     <thead>
       <tr>
@@ -24,3 +38,4 @@
     </tbody>
   </nz-table>
 </nz-card>
+
