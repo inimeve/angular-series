@@ -12,6 +12,7 @@ import { PetRepository } from './core/pet/pet.repository';
 import { VetRepository } from './core/vet/vet.repository';
 import { PetMockRepository } from './data/pet/pet-mock-api/pet-mock.repository';
 import { VetMockRepository } from './data/vet/vet-mock-api/vet-mock.repository';
+import { VetWebRepository } from './data/vet/vet-web-api/vet-web.repository';
 import { SharedModule } from './ui/shared/shared.module';
 
 
@@ -33,7 +34,7 @@ registerLocaleData(es);
   providers: [
     { provide: NZ_I18N, useValue: es_ES },
     { provide: PetRepository, useClass: PetMockRepository },
-    { provide: VetRepository, useClass: VetMockRepository }
+    { provide: VetRepository, useClass: VetWebRepository }
   ],
   bootstrap: [AppComponent]
 })
