@@ -1,4 +1,4 @@
-<nz-card nzTitle="Pet Data">
+<nz-card nzTitle="Pet Data" *ngIf="(pets$ | async) as pets">
   <nz-table #basicTable [nzData]="pets">
     <thead>
       <tr>

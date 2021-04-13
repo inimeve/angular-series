@@ -10,8 +10,6 @@ import { VetUseCases } from 'src/app/core/vet/vet.usecases';
 })
 export class VetsComponent implements OnInit {
 
-  // vets: Array<VetModel> = [];
-
   vets$: Observable<VetModel[]> = this.vetUsesCases.vets$;
 
   constructor(private vetUsesCases: VetUseCases) { }
