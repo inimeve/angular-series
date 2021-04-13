@@ -13,10 +13,10 @@ export class PetUseCases {
     public pets$ = this.petSubject.asObservable();
 
     constructor(private petRepository: PetRepository) {
-        this.updateVets();
+        this.updatePets();
     }
 
-    updateVets(): void {
+    updatePets(): void {
         this.petRepository.getAllPets().subscribe({
             next: (vets: PetModel[]) => {
                 this.petSubject.next(vets);
@@ -25,7 +25,6 @@ export class PetUseCases {
             complete: () => console.info('Pets updated!')
         })
     }
-
 
     getAllPets(): Observable<PetModel[]> {
         return this.petRepository.getAllPets();

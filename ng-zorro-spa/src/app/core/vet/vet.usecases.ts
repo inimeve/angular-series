@@ -26,6 +26,10 @@ export class VetUseCases {
         })
     }
 
+    findVet(id: number): Observable<VetModel> {
+        return this.vetRepository.getVetById(id);
+    }
+
     addVet(name: string, age: number, addres: string, phone: string): VetModel {
         const vetToAdd: VetModel = {
             name: name,

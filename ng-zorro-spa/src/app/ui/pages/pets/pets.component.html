@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>Birthday</th>
         <th>VetId</th>
+        <th>VetName</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -13,6 +14,7 @@
         <td>{{ data.name }}</td>
         <td>{{ data.birthday | date }}</td>
         <td>{{ data.vetId }}</td>
+        <td>{{ (getVet(data.vetId) | async)?.name }}</td>
         <td>
           <a>Action 一 {{ data.name }}</a>
           <nz-divider nzType="vertical"></nz-divider>
