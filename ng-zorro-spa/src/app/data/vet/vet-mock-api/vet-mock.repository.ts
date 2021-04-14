@@ -60,7 +60,9 @@ export class VetMockRepository extends VetRepository {
     getVetById(id: number): Observable<VetModel> {
         return from(this.vets)
             .pipe(filter((vets: VetMockEntity) => vets.id === id))
-            .pipe(map(this.mapper.mapFrom));
+            .pipe(
+                map(this.mapper.mapFrom),
+            );
     }
 
     getAllVets(): Observable<VetModel[]> {

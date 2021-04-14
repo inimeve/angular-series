@@ -23,7 +23,7 @@ export class VetUseCases {
             },
             error: error => console.error(error),
             complete: () => console.info('Vets updated!')
-        })
+        });
     }
 
     findVet(id: number): Observable<VetModel> {

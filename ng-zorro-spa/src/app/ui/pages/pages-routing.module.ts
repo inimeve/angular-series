@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'vets', loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule) },
       { path: 'pets', loadChildren: () => import('./pets/pets.module').then(m => m.PetsModule) },
+      { path: 'rxjs-lessons', loadChildren: () => import('./rxjs-lessons/rxjs-lessons.module').then(m => m.RxjsLessonsModule) },
     ]
   },
   { path: '', pathMatch: 'full', redirectTo: 'welcome' },
