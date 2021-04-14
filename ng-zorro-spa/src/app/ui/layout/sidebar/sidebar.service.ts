@@ -19,7 +19,7 @@ export class SidebarService {
   private sidebarState$;
 
   constructor() {
-    this.sidebarState$ = new BehaviorSubject<SidebarState>(SidebarState.STATE_EXPANDED);
+    this.sidebarState$ = new BehaviorSubject<SidebarState>(SidebarState.STATE_COMPACTED);
   }
 
   getState(): SidebarState {
