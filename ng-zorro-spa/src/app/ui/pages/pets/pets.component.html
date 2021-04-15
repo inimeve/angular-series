@@ -1,4 +1,4 @@
-<nz-card nzTitle="Pet Data" *ngIf="(pets$ | async) as pets">
+<nz-card nzTitle="Pet Data" *ngIf="(petsWithVets$ | async) as pets">
   <nz-table #basicTable [nzData]="pets">
     <thead>
       <tr>
@@ -14,7 +14,7 @@
         <td>{{ data.name }}</td>
         <td>{{ data.birthday | date }}</td>
         <td>{{ data.vetId }}</td>
-        <td>{{ (getVet(data.vetId) | async)?.name }}</td>
+        <td>{{ data.vet?.name }}</td>
         <td>
           <a>Action 一 {{ data.name }}</a>
           <nz-divider nzType="vertical"></nz-divider>
